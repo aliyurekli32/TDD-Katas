@@ -1,3 +1,3 @@
 export const isLeapYear = (year: number): boolean => {
-  return true;
+  return year % 4 === 0;
 };
