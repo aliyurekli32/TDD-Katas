@@ -10,6 +10,8 @@ export class BowlingGame {
         takeIndex = true;
         return sum;
       }
+      if (num === 10)
+        return sum + 10 + this.list[index + 1] + this.list[index + 2];
       if (this.list[index] + this.list[index + 1] === 10) {
         takeIndex = false;
         return sum + 10 + this.list[index + 2];
