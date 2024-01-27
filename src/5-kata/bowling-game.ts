@@ -10,12 +10,22 @@ export class BowlingGame {
         takeIndex = true;
         return sum;
       }
-      if (num === 10)
+      if (
+        num === 10 &&
+        index + 1 < this.list.length &&
+        index + 2 < this.list.length
+      )
         return sum + 10 + this.list[index + 1] + this.list[index + 2];
-      if (this.list[index] + this.list[index + 1] === 10) {
+      if (
+        this.list[index] + this.list[index + 1] === 10 &&
+        index + 2 < this.list.length
+      ) {
         takeIndex = false;
         return sum + 10 + this.list[index + 2];
-      } else if (this.list[index] + this.list[index + 1] < 10) {
+      } else if (
+        this.list[index] + this.list[index + 1] < 10 &&
+        index + 1 < this.list.length
+      ) {
         takeIndex = false;
         return sum + num + this.list[index + 1];
       }
