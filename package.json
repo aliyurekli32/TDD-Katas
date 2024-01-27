@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "bash -c jest && git commit -am working || git reset --hard && npm run test"
+    "test": "bash -c jest && git commit -am working || git reset --hard"
   },
   "keywords": [],
   "author": "",
