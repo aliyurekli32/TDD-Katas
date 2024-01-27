@@ -5,6 +5,8 @@ export const calculateStats = (
     min: Math.min(...numbers),
     max: Math.max(...numbers),
     length: numbers.length,
-    average: numbers.reduce((a, b) => a + b, 0) / numbers.length,
+    average: parseFloat(
+      (numbers.reduce((a, b) => a + b, 0) / numbers.length).toFixed(6)
+    ),
   };
 };
