@@ -1,8 +1,18 @@
 export class RecentlyList {
-  private list: number[] = [];
+  private list: (number | string)[] = [];
+  listSize: number;
+  constructor(listSize: number = 5) {
+    this.listSize = listSize;
+  }
 
-  addItemToList(number: number) {
-    if (!this.list.includes(number)) {
+  addItemToList(number: number | string) {
+    if (
+      !this.list.includes(number) &&
+      number !== null &&
+      number !== undefined &&
+      number !== "" &&
+      this.list.length < this.listSize
+    ) {
       this.list = [number, ...this.list];
     }
   }
