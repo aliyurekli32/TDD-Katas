@@ -2,7 +2,7 @@ export class RecentlyList {
   private list: (number | string)[] = [];
   listSize: number;
   constructor(listSize: number = 5) {
-    this.listSize = listSize;
+    this.listSize = listSize < 0 ? 5 : listSize;
   }
 
   addItemToList(number: number | string) {
@@ -20,6 +20,9 @@ export class RecentlyList {
     return this.list;
   }
   gerElementWithIndex(index: number) {
-    return this.list[index];
+    if (index < this.list.length && index >= 0) {
+      return this.list[index];
+    }
+    throw new Error("Invalid index");
   }
 }
