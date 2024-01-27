@@ -7,4 +7,7 @@ export class RecentlyList {
   getRecentlyList() {
     return this.list;
   }
+  gerElementWithIndex(index: number) {
+    return this.list[index];
+  }
 }
